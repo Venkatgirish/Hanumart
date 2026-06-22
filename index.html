@@ -977,5 +977,24 @@ function checkout() {
 <footer>
     <p>© 2026 Hanumart</p>
 </footer>
+    <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAcsz4KGvos2xDlLhaNdwhTa5LxQaWwOag",
+    authDomain: "hanumart-3315f.firebaseapp.com",
+    projectId: "hanumart-3315f",
+    storageBucket: "hanumart-3315f.firebasestorage.app",
+    messagingSenderId: "393995063832",
+    appId: "1:393995063832:web:564a7ab6bb54185455696d",
+    measurementId: "G-CCM8NDGKTR"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  console.log("Firebase Connected");
+</script>
 </body>
 </html>
