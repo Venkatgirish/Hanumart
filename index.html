@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        div {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px gray;
+        }
+
+        p {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.dark {
+    background-color: #222;
+    color: white;
+}
+
+.dark div {
+    background-color: #333;
+    color: white;
+}
+
+.dark h2,
+.dark h3 {
+    color: white;
+}
+
+.dark p {
+    color: yellow;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+    <h1>Hanumart</h1>
+</header>
+
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+footer {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+}
+    </style>
+</head>
+
+<body>
+
+<h2>Products</h2>
+
+<h3 id="cart">🛒 Cart: 0</h3>
+<h3 id="total">💰 Total: ₹0</h3>
+
+<input type="text"
+id="search"
+placeholder="Search Products"
+onkeyup="searchProduct()">
+
+<button onclick="viewCart()">
+    View My Cart
+</button>
+
+<button onclick="darkMode()">
+    🌙 Dark Mode
+</button>
+<h3>Delivery Details</h3>
+
+<input type="text"
+id="name"
+placeholder="Enter Your Name">
+
+<br><br>
+
+<input type="tel"
+id="phone"
+placeholder="Enter Mobile Number">
+
+<br><br>
+
+<input type="text"
+id="address"
+placeholder="Enter Delivery Address">
+
+<br>
+
+<div class="product">
+    <img src="milk.jpg">
+
+    <h3>Milk 500ml</h3>
+
+    <p>₹32</p>
+
+    <button onclick="addCart('Milk 500ml',32)">
+        ➕
+    </button>
+    <span id="milk500mlQty">1</span>
+    <button onclick="removeCart('Milk 500ml',32)">
+        ➖
+    </button>
+
+</div>
+<div class="product">
+    <img src="milk.jpg">
+
+    <h3>Milk 1L</h3>
+
+    <p>₹60</p>
+
+    <button onclick="addCart('Milk 1L',60)">
+        ➕
+    </button>
+    <span id="milk1LQty">1</span>
+    <button onclick="removeCart('Milk 1L',60)">
+        ➖
+    </button>
+
+
+</div>
+<div class="product">
+    <img src="curd.jpg" alt="Curd">
+
+    <h3>Curd 500g</h3>
+
+    <p>₹40</p>
+
+    <button onclick="addCart('Curd 500g',40)">
+        ➕
+    </button>
+
+    <span id="curd500gQty">1</span>
+
+    <button onclick="removeCart('Curd 500g',40)">
+        ➖
+    </button>
+
+</div>
+<div class="product">
+    <img src="butter.jpg" alt="Butter">
+
+    <h3>Butter 100g</h3>
+
+    <p>₹55</p>
+
+    <button onclick="addCart('Butter 100g',55)">
+        ➕
+    </button>
+
+    <span id="butter100gQty">1</span>
+
+    <button onclick="removeCart('Butter 100g',55)">
+        ➖
+    </button>
+
+</div>
+<div class="product">
+    <img src="cheese.jpg" alt="Cheese">
+<h3>Cheese 200g</h3>
+<p>₹120</p>
+ <button onclick="addCart('Cheese 200g',120)">
+    ➕
+</button>
+
+    <span id="cheese200gQty">1</span>
+
+    <button onclick="removeCart('Cheese 200g',120)">
+        ➖
+    </button>
+</div>
+
+<div class="product">
+    <img src="rice.jpg" alt="Rice">
+<h3>Rice 5kg</h3>
+<p>₹320</p>
+ <button onclick="addCart('Rice 5kg',320)">
+    ➕
+</button>
+ <span id="rice5kgQty">1</span>
+ <button onclick="removeCart('Rice 5kg',320)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="rice.jpg" alt="Rice">
+<h3>Rice 10kg</h3>
+<p>₹620</p>
+ <button onclick="addCart('Rice 10kg',620)">
+    ➕
+</button>
+ <span id="rice10kgQty">1</span>
+ <button onclick="removeCart('Rice 10kg',620)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="sugar.jpg" alt="Sugar">
+<h3>Sugar 1kg</h3>
+<p>₹45</p>
+ <button onclick="addCart('Sugar 1kg',45)">
+    ➕
+</button>
+ <span id="sugar1kgQty">1</span>
+ <button onclick="removeCart('Sugar 1kg',45)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="salt.jpg" alt="Salt">
+<h3>Salt 1kg</h3>
+<p>₹20</p>
+ <button onclick="addCart('Salt 1kg',20)">
+    ➕
+</button>
+ <span id="salt1kgQty">1</span>
+ <button onclick="removeCart('Salt 1kg',20)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="wheat_flour.jpg" alt="Wheat Flour">
+<h3>Wheat Flour 5kg</h3>
+<p>₹240</p>
+ <button onclick="addCart('Wheat Flour 5kg',240)">
+    ➕
+</button>
+ <span id="wheat_flour5kgQty">1</span>
+ <button onclick="removeCart('Wheat Flour 5kg',240)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="sunflower_oil.jpg" alt="Sunflower Oil">
+<h3>Sunflower Oil 1L</h3>
+<p>₹160</p>
+ <button onclick="addCart('Sunflower Oil 1L',160)">
+    ➕
+</button>
+ <span id="sunflower_oil1LQty">1</span>
+ <button onclick="removeCart('Sunflower Oil 1L',160)">
+        ➖
+    </button>
+</div> 
+<div class="product">
+    <img src="groundnut_oil.jpg" alt="Groundnut Oil">
+<h3>Groundnut Oil 1L</h3>
+<p>₹190</p>
+ <button onclick="addCart('Groundnut Oil 1L',190)">
+    ➕
+</button>
+ <span id="groundnut_oil1LQty">1</span>
+ <button onclick="removeCart('Groundnut Oil 1L',190)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="tea_powder.jpg" alt="Tea Powder">
+<h3>Tea Powder 500g</h3>
+<p>₹220</p>
+ <button onclick="addCart('Tea Powder 500g',220)">
+    ➕
+</button>
+ <span id="tea_powder500gQty">1</span>
+ <button onclick="removeCart('Tea Powder 500g',220)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="coffee_powder.jpg" alt="Coffee Powder">
+<h3>Coffee Powder 200g</h3>
+<p>₹180</p>
+ <button onclick="addCart('Coffee Powder 200g',180)">
+    ➕
+</button>
+ <span id="coffee_powder200gQty">1</span>
+ <button onclick="removeCart('Coffee Powder 200g',180)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="turmeric_powder.jpg" alt="Turmeric Powder">
+<h3>Turmeric Powder 200g</h3>
+<p>₹45</p>
+ <button onclick="addCart('Turmeric Powder 200g',45)">
+    ➕
+</button>
+ <span id="turmeric_powder200gQty">1</span>
+ <button onclick="removeCart('Turmeric Powder 200g',45)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="chilli_powder.jpg" alt="Chilli Powder">
+<h3>Chilli Powder 500g</h3>
+<p>₹140</p>
+ <button onclick="addCart('Chilli Powder 500g',140)">
+    ➕
+</button>
+ <span id="chilli_powder500gQty">1</span>
+ <button onclick="removeCart('Chilli Powder 500g',140)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="coriander_powder.jpg" alt="Coriander Powder">
+<h3>Coriander Powder 200g</h3>
+<p>₹50</p>
+ <button onclick="addCart('Coriander Powder 200g',50)">
+    ➕
+</button>
+ <span id="coriander_powder200gQty">1</span>
+ <button onclick="removeCart('Coriander Powder 200g',50)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="toor_dal.jpg" alt="Toor Dal">
+<h3>Toor Dal 1kg</h3>
+<p>₹150</p>
+ <button onclick="addCart('Toor Dal 1kg',150)">
+    ➕
+</button>
+ <span id="toor_dal1kgQty">1</span>
+ <button onclick="removeCart('Toor Dal 1kg',150)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="moong_dal.jpg" alt="Moong Dal">
+<h3>Moong Dal 1kg</h3>
+<p>₹130</p>
+ <button onclick="addCart('Moong Dal 1kg',130)">
+    ➕
+</button>
+ <span id="moong_dal1kgQty">1</span>
+<button onclick="removeCart('Moong Dal 1kg',130)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="urad_dal.jpg" alt="Urad Dal">
+<h3>Urad Dal 1kg</h3>
+<p>₹145</p>
+ <button onclick="addCart('Urad Dal 1kg',145)">
+    ➕
+</button>
+ <span id="urad_dal1kgQty">1</span>
+<button onclick="removeCart('Urad Dal 1kg',145)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="potato.jpg" alt="Potato">
+<h3>Potato 1kg</h3>
+<p>₹35</p>
+ <button onclick="addCart('Potato 1kg',35)">
+    ➕
+</button>
+ <span id="potato1kgQty">1</span>
+<button onclick="removeCart('Potato 1kg',35)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="onion.jpg" alt="Onion">
+    <h3>Onion 1kg</h3>
+<p>₹40</p>
+ <button onclick="addCart('Onion 1kg',40)">
+    ➕
+</button>
+ <span id="onion1kgQty">1</span>
+<button onclick="removeCart('Onion 1kg',40)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="tomato.jpg" alt="Tomato">
+    <h3>Tomato 1kg</h3>
+    <p>₹30</p>
+ <button onclick="addCart('Tomato 1kg',30)">
+    ➕
+</button>
+ <span id="tomato1kgQty">1</span>
+<button onclick="removeCart('Tomato 1kg',30)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="carrot.jpg" alt="Carrot">
+<h3>Carrot 500g</h3>
+<p>₹35</p>
+ <button onclick="addCart('Carrot 500g',35)">
+    ➕
+</button>
+ <span id="carrot500gQty">1</span>
+<button onclick="removeCart('Carrot 500g',35)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="beans.jpg" alt="Beans">
+<h3>Beans 500g</h3>
+<p>₹45</p>
+ <button onclick="addCart('Beans 500g',45)">
+    ➕
+</button>
+ <span id="beans500gQty">1</span>
+<button onclick="removeCart('Beans 500g',45)">
+        ➖
+    </button>
+</div>
+
+<div class="product">
+    <img src="banana.jpg" alt="Banana">
+<h3>Banana 1 Dozen</h3>
+<p>₹60</p>
+ <button onclick="addCart('Banana 1 Dozen',60)">
+    ➕
+</button>
+ <span id="banana1dozenQty">1</span>
+<button onclick="removeCart('Banana 1 Dozen',60)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="apple.jpg" alt="Apple">
+<h3>Apple 1kg</h3>
+<p>₹180</p>
+ <button onclick="addCart('Apple 1kg',180)">
+    ➕
+</button>
+ <span id="apple1kgQty">1</span>
+<button onclick="removeCart('Apple 1kg',180)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="orange.jpg" alt="Orange">
+<h3>Orange 1kg</h3>
+<p>₹90</p>
+ <button onclick="addCart('Orange 1kg',90)">
+    ➕
+</button>
+ <span id="orange1kgQty">1</span>
+<button onclick="removeCart('Orange 1kg',90)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="mango.jpg" alt="Mango">
+<h3>Mango 1kg</h3>
+<p>₹120</p>
+ <button onclick="addCart('Mango 1kg',120)">
+    ➕
+</button>
+ <span id="mango1kgQty">1</span>
+<button onclick="removeCart('Mango 1kg',120)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="watermelon.jpg" alt="Watermelon">
+<h3>Watermelon 1pc</h3>
+<p>₹70</p>
+ <button onclick="addCart('Watermelon 1pc',70)">
+    ➕
+</button>
+ <span id="watermelon1pcQty">1</span>
+<button onclick="removeCart('Watermelon 1pc',70)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="bread.jpg" alt="Bread">
+    <h3>Bread</h3>
+    <p>₹40</p>
+    <button onclick="addCart('Bread',40)">
+        ➕
+    </button>
+    <span id="breadQty">1</span>
+    <button onclick="removeCart('Bread',40)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="biscuits.jpg" alt="Biscuits">
+<h3>Biscuits</h3>
+<p>₹20</p><button onclick="addCart('Biscuits',20)">
+        ➕
+    </button>
+    <span id="biscuitsQty">1</span>
+    <button onclick="removeCart('Biscuits',20)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="noodles.jpg" alt="Noodles">
+<h3>Noodles</h3>
+<p>₹25</p>
+ <button onclick="addCart('Noodles',25)">
+    ➕
+</button>
+ <span id="noodlesQty">1</span>
+<button onclick="removeCart('Noodles',25)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="pasta.jpg" alt="Pasta">
+<h3>Pasta 500g</h3>
+<p>₹90</p>
+ <button onclick="addCart('Pasta 500g',90)">
+    ➕
+</button>
+ <span id="pasta500gQty">1</span>
+<button onclick="removeCart('Pasta 500g',90)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="corn_flakes.jpg" alt="Corn Flakes">
+<h3>Corn Flakes 500g</h3>
+<p>₹160</p>
+ <button onclick="addCart('Corn Flakes 500g',160)">
+    ➕
+</button>
+ <span id="corn_flakes500gQty">1</span>
+<button onclick="removeCart('Corn Flakes 500g',160)">
+        ➖
+    </button>
+</div>
+
+<div class="product">
+    <img src="shampoo.jpg" alt="Shampoo">
+    <h3>Shampoo 180ml</h3>
+    <p>₹145</p>
+    <button onclick="addCart('Shampoo 180ml',145)">
+        ➕
+    </button>
+    <span id="shampoo180mlQty">1</span>
+    <button onclick="removeCart('Shampoo 180ml',145)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="soap.jpg" alt="Soap">
+<h3>Soap Pack</h3>
+<p>₹120</p>
+ <button onclick="addCart('Soap Pack',120)">
+    ➕
+</button>
+ <span id="soapPackQty">1</span>
+<button onclick="removeCart('Soap Pack',120)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="toothpaste.jpg" alt="Toothpaste">
+<h3>Toothpaste 200g</h3>
+<p>₹95</p>
+ <button onclick="addCart('Toothpaste 200g',95)">
+    ➕
+</button>
+ <span id="toothpaste200gQty">1</span>
+<button onclick="removeCart('Toothpaste 200g',95)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="toothbrush.jpg" alt="Toothbrush">
+<h3>Toothbrush</h3>
+<p>₹30</p>
+ <button onclick="addCart('Toothbrush',30)">
+    ➕
+</button>
+ <span id="toothbrushQty">1</span>
+<button onclick="removeCart('Toothbrush',30)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="face_wash.jpg" alt="Face Wash">
+<h3>Face Wash 100ml</h3>
+<p>₹140</p>
+ <button onclick="addCart('Face Wash 100ml',140)">
+    ➕
+</button>
+ <span id="face_wash100mlQty">1</span>
+<button onclick="removeCart('Face Wash 100ml',140)">
+        ➖
+    </button>
+</div>
+
+<div class="product">
+    <img src="detergent_powder.jpg" alt="Detergent Powder">
+    <h3>Detergent Powder 1kg</h3>
+    <p>₹110</p>
+    <button onclick="addCart('Detergent Powder 1kg',110)">
+        ➕
+    </button>
+    <span id="detergent_powder1kgQty">1</span>
+    <button onclick="removeCart('Detergent Powder 1kg',110)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="dishwash_liquid.jpg" alt="Dishwash Liquid">
+    <h3>Dishwash Liquid 500ml</h3>
+    <p>₹95</p>
+ <button onclick="addCart('Dishwash Liquid 500ml',95)">
+    ➕
+</button>
+    <span id="dishwash_liquid500mlQty">1</span>
+    <button onclick="removeCart('Dishwash Liquid 500ml',95)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="floor_cleaner.jpg" alt="Floor Cleaner">
+    <h3>Floor Cleaner 1L</h3>
+<p>₹180</p>
+ <button onclick="addCart('Floor Cleaner 1L',180)">
+    ➕
+</button>
+    <span id="floor_cleaner1LQty">1</span>
+    <button onclick="removeCart('Floor Cleaner 1L',180)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="garbage_bags.jpg" alt="Garbage Bags">
+<h3>Garbage Bags</h3>
+<p>₹70</p>
+ <button onclick="addCart('Garbage Bags',70)">
+    ➕
+</button>
+    <span id="garbage_bagsQty">1</span>
+    <button onclick="removeCart('Garbage Bags',70)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="tissue_paper.jpg" alt="Tissue Paper Pack">
+<h3>Tissue Paper Pack</h3>
+<p>₹80</p>
+ <button onclick="addCart('Tissue Paper Pack',80)">
+    ➕
+</button>
+    <span id="tissue_paperPackQty">1</span>
+    <button onclick="removeCart('Tissue Paper Pack',80)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="eggs.jpg" alt="Eggs 12 Pack">
+    
+    <h3>Eggs 12 Pack</h3>
+    <p>₹75</p>
+    <button onclick="addCart('Eggs 12 Pack',75)">
+        ➕
+    </button>
+    <span id="eggs12PackQty">1</span>
+    <button onclick="removeCart('Eggs 12 Pack',75)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="chicken.jpg">
+    <h3>Chicken 1kg</h3>
+    <p>₹260</p>
+    <button onclick="addCart('Chicken 1kg',260)">
+        ➕
+    </button>
+    <span id="chicken1kgQty">1</span>
+    <button onclick="removeCart('Chicken 1kg',260)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="fish.jpg" alt="Fish 1kg">
+    <h3>Fish 1kg</h3>
+    <p>₹320</p>
+    <button onclick="addCart('Fish 1kg',320)">
+        ➕
+    </button>
+    <span id="fish1kgQty">1</span>
+    <button onclick="removeCart('Fish 1kg',320)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="paneer.jpg" alt="Paneer 200g">
+    
+    <h3>Paneer 200g</h3>
+    <p>₹90</p>
+ <button onclick="addCart('Paneer 200g',90)">
+    ➕
+</button>
+<span id="paneer200gQty">1</span>
+<button onclick="removeCart('Paneer 200g',90)">
+        ➖
+    </button>
+</div>
+<div class="product">
+    <img src="ice_cream.jpg" alt="Ice Cream 500ml">
+   
+    <h3>Ice Cream 500ml</h3>
+<p>₹140</p>
+ <button onclick="addCart('Ice Cream 500ml',140)">
+    ➕
+</button>
+<span id="ice_cream500mlQty">1</span>
+<button onclick="removeCart('Ice Cream 500ml',140)">
+        ➖
+    </button>
+</div>
+<script>
+let count = 0;
+let total = 0;
+let cartItems = {};
+let orderId = 1000;
+
+function addCart(name, price) {
+
+    count++;
+    total += price;
+
+    if(cartItems[name]){
+        cartItems[name]++;
+    }
+    else{
+        cartItems[name] = 1;
+    }
+
+    if(name == "Milk 500ml"){
+        document.getElementById("milk500mlQty").innerText =
+        cartItems[name];
+    }
+
+    if(name == "Milk 1L"){
+        document.getElementById("milk1LQty").innerText =
+        cartItems[name];
+    }
+    document.getElementById("cart").innerText =
+    "🛒 Cart: " + count;
+
+    document.getElementById("total").innerText =
+    "💰 Total: ₹" + total;
+}
+function removeCart(name, price) {
+
+    if(cartItems[name]){
+
+        cartItems[name]--;
+
+        count--;
+        total -= price;
+
+        if(cartItems[name] == 0){
+            delete cartItems[name];
+        }
+if(name == "Milk 500ml"){
+    document.getElementById("milk500mlQty").innerText =
+    cartItems[name] || 0;
+}
+
+if(name == "Milk 1L"){
+    document.getElementById("milk1LQty").innerText =
+    cartItems[name] || 0;
+}
+        document.getElementById("cart").innerText =
+        "🛒 Cart: " + count;
+
+        document.getElementById("total").innerText =
+        "💰 Total: ₹" + total;
+    }
+}
+
+function checkout() {
+
+    if(cartItems.length == 0){
+        alert("Cart is Empty!");
+        return;
+    }
+
+    orderId++;
+
+let delivery = 40;
+
+if(total >= 500){
+    delivery = 0;
+}
+
+alert(
+    "✅ Order Placed Successfully!\n\n" +
+    "Order ID: #" + orderId +
+    "\n\nProducts:\n" +
+    cartItems.join("\n") +
+    "\n\nDelivery Charge: ₹" + delivery +
+    "\nTotal Price: ₹" + (total + delivery)
+);
+
+    count = 0;
+    total = 0;
+   let cartItems = {};
+
+    document.getElementById("cart").innerText =
+    "🛒 Cart: 0";
+
+    document.getElementById("total").innerText =
+    "💰 Total: ₹0";
+}
+function darkMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
+<script>
+ 
+function searchProduct() {
+
+    let input =
+    document.getElementById("search").value.toLowerCase();
+
+    let products =
+    document.getElementsByClassName("product");
+
+    for (let i = 0; i < products.length; i++) {
+
+        let name =
+        products[i].querySelector("h3");
+
+        if (name) {
+
+            if (name.innerText.toLowerCase().includes(input)) {
+                products[i].style.display = "block";
+            } else {
+                products[i].style.display = "none";
+            }
+
+        }
+    }
+}
+function viewCart() {
+
+    if(Object.keys(cartItems).length == 0){
+        alert("Cart is Empty!");
+        return;
+    }
+
+    let message = "Your Cart:\n\n";
+
+    for(let item in cartItems){
+        message += item + " x " + cartItems[item] + "\n";
+    }
+
+    message += "\nTotal Price: ₹" + total;
+
+    alert(message);
+}
+
+function checkout() {
+
+    if(count == 0){
+        alert("Cart is Empty!");
+        return;
+    }
+
+    let message =
+    "✅ Order Placed Successfully!\n\nProducts:\n";
+
+    for(let item in cartItems){
+        message += item + " x " + cartItems[item] + "\n";
+    }
+
+    message += "\nTotal Price: ₹" + total;
+
+    alert(message);
+
+    count = 0;
+    total = 0;
+    cartItems = {};
+
+    document.getElementById("cart").innerText =
+    "🛒 Cart: 0";
+
+    document.getElementById("total").innerText =
+    "💰 Total: ₹0";
+}
+</script>
+
+<br><br>
+
+<select id="payment">
+    <option>Payment method
+    </option>
+    <option>UPI Payment</option>
+    <option>Cash on Delivery</option> 
+    <option>Card Payment</option>
+</select>
+<br><br>
+
+<button onclick="checkout()">
+    Checkout
+</button>
+
+<footer>
+    <p>© 2026 Hanumart</p>
+</footer>
+</body>
+</html>
